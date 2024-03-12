@@ -1,0 +1,108 @@
+@font-face {
+    font-family: 'SF Pro Text';
+    src: url('SFProText-Medium.eot');
+    src: url('SFProText-Medium.eot?#iefix') format('embedded-opentype'),
+        url('SFProText-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'SF Pro Text';
+    src: url('SFProText-Regular.eot');
+    src: url('SFProText-Regular.eot?#iefix') format('embedded-opentype'),
+        url('SFProText-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'SF Pro Text';
+    src: url('SFProText-Light.eot');
+    src: url('SFProText-Light.eot?#iefix') format('embedded-opentype'),
+        url('SFProText-Light.ttf') format('truetype');
+    font-weight: 200;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'SF Pro Text';
+    src: url('SFProText-HeavyItalic.eot');
+    src: url('SFProText-HeavyItalic.eot?#iefix') format('embedded-opentype'),
+        url('SFProText-HeavyItalic.ttf') format('truetype');
+    font-weight: 900;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'SF Pro Text';
+    src: url('SFProText-SemiboldItalic.eot');
+    src: url('SFProText-SemiboldItalic.eot?#iefix') format('embedded-opentype'),
+        url('SFProText-SemiboldItalic.ttf') format('truetype');
+    font-weight: 600;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'SF Pro Text';
+    src: url('SFProText-Bold.eot');
+    src: url('SFProText-Bold.eot?#iefix') format('embedded-opentype'),
+        url('SFProText-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'SF Pro Text';
+    src: url('SFProText-MediumItalic.eot');
+    src: url('SFProText-MediumItalic.eot?#iefix') format('embedded-opentype'),
+        url('SFProText-MediumItalic.ttf') format('truetype');
+    font-weight: 500;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'SF Pro Text';
+    src: url('SFProText-LightItalic.eot');
+    src: url('SFProText-LightItalic.eot?#iefix') format('embedded-opentype'),
+        url('SFProText-LightItalic.ttf') format('truetype');
+    font-weight: 200;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'SF Pro Text';
+    src: url('SFProText-RegularItalic.eot');
+    src: url('SFProText-RegularItalic.eot?#iefix') format('embedded-opentype'),
+        url('SFProText-RegularItalic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'SF Pro Text';
+    src: url('SFProText-BoldItalic.eot');
+    src: url('SFProText-BoldItalic.eot?#iefix') format('embedded-opentype'),
+        url('SFProText-BoldItalic.ttf') format('truetype');
+    font-weight: bold;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'SF Pro Text';
+    src: url('SFProText-Heavy.eot');
+    src: url('SFProText-Heavy.eot?#iefix') format('embedded-opentype'),
+        url('SFProText-Heavy.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'SF Pro Text';
+    src: url('SFProText-Semibold.eot');
+    src: url('SFProText-Semibold.eot?#iefix') format('embedded-opentype'),
+        url('SFProText-Semibold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+}
+

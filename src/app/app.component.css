@@ -1,0 +1,60 @@
+.bg {
+  background: linear-gradient(
+    to bottom,
+    #ffb600,
+    #ffaa00,
+    #ff9e00,
+    #ff9100,
+    #ff8500,
+    #ff7900,
+    #ff6d00,
+    #ff6000,
+    #ff5400,
+    #ff4800
+  );
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+}
+
+main {
+  position: absolute;
+  padding: 3rem 0;
+  overflow: scroll;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.title {
+  font-family: "SF Pro Display";
+  font-size: 42px;
+  font-weight: 600;
+}
+
+ngb-carousel {
+  max-width: 900px;
+  margin: 0 50px;
+  font-family: "SF Pro Text";
+}
+
+::ng-deep .carousel-inner {
+  border-radius: 25px;
+}
+
+.button-container {
+  display: grid;
+  grid-template-rows: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.btn-alcohol {
+  border: 1px solid black;
+  border-radius: 10px;
+  padding: 40px;
+}
