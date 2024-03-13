@@ -41,6 +41,7 @@ ngb-carousel {
   max-width: 900px;
   margin: 0 50px;
   font-family: "SF Pro Text";
+  min-height: 500px;
 }
 
 ::ng-deep .carousel-inner {
@@ -100,6 +101,17 @@ ngb-carousel {
 .result-container button {
   font-family: "SF Pro Text";
   font-weight: 500;
+}
+
+.spinner-container {
+  transition: all 0.7s;
+}
+
+.active {
+  opacity: 1;
+}
+.not-active {
+  opacity: 0;
 }
 
 @media screen and (max-width: 500px) {

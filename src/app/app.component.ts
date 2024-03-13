@@ -11,7 +11,12 @@ interface Alcohol {
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-  images = [944, 1011, 984].map((n) => `https://picsum.photos/id/${n}/900/500`);
+  isLoading: boolean = true;
+  images = [
+    'assets/pics/first.jpeg',
+    'assets/pics/second.jpeg',
+    'assets/pics/third.jpeg',
+  ];
   alcohols: Array<Alcohol> = [
     { name: 'бира', alcPer: 4 },
     { name: 'водка', alcPer: 40 },
@@ -23,6 +28,10 @@ export class AppComponent {
   selectedAlcohol: Alcohol | null;
   selectedAmount: number | null;
   showResult: boolean = false;
+
+  ngOnInit() {
+    setTimeout(() => (this.isLoading = false), 1000);
+  }
 
   get result(): string {
     return (

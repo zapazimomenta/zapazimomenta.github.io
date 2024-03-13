@@ -76,3 +76,16 @@
     </button>
   </article>
 </main>
+<div
+  [ngClass]="{ active: isLoading, 'not-active': !isLoading }"
+  class="spinner-container bg d-flex justify-content-center align-items-center h-100 z-3"
+>
+  <div
+    class="spinner-grow"
+    spinner-grow-lg
+    role="status"
+    style="width: 3rem; height: 3rem"
+  >
+    <span class="sr-only">Loading...</span>
+  </div>
+</div>
