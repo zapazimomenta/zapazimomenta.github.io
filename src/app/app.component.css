@@ -104,7 +104,7 @@ ngb-carousel {
 }
 
 .spinner-container {
-  transition: all 0.7s;
+  transition: all 0.5s;
 }
 
 .active {

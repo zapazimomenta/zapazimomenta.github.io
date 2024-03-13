@@ -77,7 +77,11 @@
   </article>
 </main>
 <div
-  [ngClass]="{ active: isLoading, 'not-active': !isLoading }"
+  [ngClass]="{
+    active: isLoading,
+    'not-active': !isLoading,
+    'd-none': displayNone
+  }"
   class="spinner-container bg d-flex justify-content-center align-items-center h-100 z-3"
 >
   <div

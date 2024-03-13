@@ -12,6 +12,7 @@ interface Alcohol {
 })
 export class AppComponent {
   isLoading: boolean = true;
+  displayNone: boolean = false;
   images = [
     'assets/pics/first.jpeg',
     'assets/pics/second.jpeg',
@@ -31,6 +32,7 @@ export class AppComponent {
 
   ngOnInit() {
     setTimeout(() => (this.isLoading = false), 1000);
+    setTimeout(() => (this.displayNone = true), 1500);
   }
 
   get result(): string {
