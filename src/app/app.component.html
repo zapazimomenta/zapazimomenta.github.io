@@ -30,9 +30,49 @@
       </div>
     </ng-template>
   </ngb-carousel>
-  <article class="button-container">
+  <article *ngIf="!selectedAlcohol" class="button-container">
     <ng-container *ngFor="let alcohol of alcohols">
-      <button class="btn btn-alcohol">{{ alcohol }}</button>
+      <button class="btn btn-alcohol" (click)="selectedAlcohol = alcohol">
+        {{ alcohol.name }}
+      </button>
     </ng-container>
+  </article>
+  <article *ngIf="selectedAlcohol && !showResult" class="amount-container">
+    <form>
+      <div class="form-group">
+        <label for="amount">Какво количество изпи? (мл)</label>
+        <div class="input-and-button">
+          <input
+            [(ngModel)]="selectedAmount"
+            type="number"
+            class="form-control"
+            name="amount"
+            id="amount"
+            aria-describedby="amountHelp"
+            placeholder="200 мл"
+          />
+          <button
+            type="button"
+            [disabled]="!selectedAmount"
+            class="btn btn-primary"
+            (click)="showResult = true"
+          >
+            <i class="fa-solid fa-arrow-right"></i>
+          </button>
+        </div>
+        <small id="amountHelp" class="form-text text-muted"
+          >И недей да лъжеш!</small
+        >
+      </div>
+    </form>
+  </article>
+  <article
+    *ngIf="selectedAlcohol && selectedAmount && showResult"
+    class="result-container"
+  >
+    <p class="result">Твоят резултат е: {{ result }} алкохолни единици.</p>
+    <button type="button" (click)="tryAgain()" class="btn btn-primary">
+      Опитай пак
+    </button>
   </article>
 </main>
