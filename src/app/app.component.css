@@ -1,3 +1,16 @@
+.number {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+.btn:active {
+  border-color: transparent;
+}
+
+.white-space {
+  display: inline;
+}
+
 .bg {
   background: linear-gradient(
     to bottom,
@@ -31,21 +44,99 @@ main {
   margin: 0 auto;
 }
 
-.title {
-  font-family: "SF Pro Display";
-  font-size: 42px;
-  font-weight: 600;
+.logo-and-title {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: end;
+}
+
+.title-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 80vw;
+  margin-right: 50px;
+  padding-left: 10vw;
+}
+
+h1.title {
+  font-family: Baron;
+  font-size: 44px;
+  font-weight: 500;
+  color: #044996;
+}
+
+h2.title {
+  font-family: Baron;
+  font-size: 30px;
+  font-weight: 500;
+  color: #044996;
 }
 
 ngb-carousel {
   max-width: 900px;
   margin: 0 50px;
-  font-family: "SF Pro Text";
-  min-height: 500px;
+}
+
+.logo {
+  width: 140px;
+  padding-right: 10px;
+  position: relative;
+  bottom: 30px;
 }
 
 ::ng-deep .carousel-inner {
   border-radius: 25px;
+}
+
+.after-carousel {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.after-carousel p {
+  font-family: Garbata;
+  font-weight: 500;
+  font-size: 32px;
+  color: #044996;
+  text-align: center;
+  max-width: 80vw;
+  width: fit-content;
+  margin-bottom: 0;
+}
+
+.consumed-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.consumed-container-title {
+  font-family: Garbata;
+  font-weight: 500;
+  font-size: 32px;
+  color: #044996;
+  text-align: center;
+  max-width: 80vw;
+}
+
+.consumed-container-text {
+  font-family: Garbata;
+  font-weight: 500;
+  font-size: 19px;
+  color: #044996;
+  text-align: center;
+  max-width: 80vw;
+}
+
+.button-container,
+.result-container,
+.amount-container {
+  min-height: 400px;
 }
 
 .button-container {
@@ -58,14 +149,60 @@ ngb-carousel {
 .result-container,
 .amount-container,
 .btn-alcohol {
+  display: flex;
+  flex-direction: row;
   border-radius: 10px;
   padding: 40px;
-  background-color: white;
   transition: all 0.3s;
-  font-weight: 600;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
 }
 .btn-alcohol:hover {
   transform: scale(1.2);
+}
+
+.btn-alcohol:nth-child(1) .alcohol-pic {
+  position: relative;
+  bottom: 3px;
+}
+.btn-alcohol:nth-child(2) .alcohol-pic {
+  position: relative;
+  bottom: 10px;
+}
+.btn-alcohol:nth-child(3) .alcohol-pic {
+  position: relative;
+  bottom: 3px;
+}
+.btn-alcohol:nth-child(4) .alcohol-pic {
+  position: relative;
+  bottom: 3px;
+}
+.btn-alcohol:nth-child(5) .alcohol-pic {
+  position: relative;
+  bottom: 5px;
+}
+.btn-alcohol:nth-child(6) .alcohol-pic {
+  position: relative;
+  bottom: 2px;
+}
+
+.alcohol-pic {
+  width: 40px;
+}
+
+.alcohol-name {
+  font-family: Baron;
+  font-size: 33.5px;
+  font-weight: 500;
+  color: #044996;
+}
+
+.amount-container label {
+  font-family: Garbata;
+  font-weight: 500;
+  font-size: 19px;
+  color: #044996;
 }
 
 .input-and-button {
@@ -85,7 +222,6 @@ ngb-carousel {
 .amount-container {
   width: 50vw;
   min-width: 300px;
-  height: 200px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -97,10 +233,20 @@ ngb-carousel {
 }
 .result-container p {
   text-align: center;
+  font-family: Garbata;
+  font-weight: 500;
+  font-size: 19px;
+  color: #044996;
 }
 .result-container button {
-  font-family: "SF Pro Text";
+  font-family: Garbata;
   font-weight: 500;
+  font-size: 19px;
+}
+.result-container p.text {
+  font-family: Garbata;
+  font-weight: 500;
+  font-size: 22px;
 }
 
 .spinner-container {
@@ -119,5 +265,17 @@ ngb-carousel {
     grid-template-rows: repeat(3, 1fr);
     grid-template-columns: repeat(2, 1fr);
     gap: 1rem;
+  }
+
+  .btn-alcohol {
+    padding: 0;
+  }
+
+  .logo-and-title {
+    flex-direction: column-reverse;
+  }
+
+  .white-space {
+    display: none;
   }
 }

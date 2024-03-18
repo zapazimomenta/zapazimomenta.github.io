@@ -1,6 +1,17 @@
 <div class="bg"></div>
 <main>
-  <h1 class="title">Hristiana</h1>
+  <div class="logo-and-title">
+    <div class="title-container">
+      <h1 class="title">Запази момента,</h1>
+      <h2 class="title">
+        <span class="white-space"
+          >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span
+        >
+        знай кога да спреш!
+      </h2>
+    </div>
+    <img src="../assets/pics/logo.png" alt="logo" class="logo" />
+  </div>
   <ngb-carousel>
     <ng-template ngbSlide>
       <div class="picsum-img-wrapper">
@@ -30,14 +41,31 @@
       </div>
     </ng-template>
   </ngb-carousel>
+  <div class="after-carousel">
+    <p>Нека запазим моментите си приятни и споделени.</p>
+    <p>Консумирай отговорно!</p>
+  </div>
+  <article class="consumed-container">
+    <h3 class="consumed-container-title">Следи консумацията си тук.</h3>
+    <p class="consumed-container-text">
+      Използвай този алкохолен калкулатор, за да разбереш колко алкохолни
+      единици съдържа всяка напитка.
+    </p>
+  </article>
   <article *ngIf="!selectedAlcohol" class="button-container">
     <ng-container *ngFor="let alcohol of alcohols">
       <button class="btn btn-alcohol" (click)="selectedAlcohol = alcohol">
-        {{ alcohol.name }}
+        <img [src]="alcohol.pic" alt="" class="alcohol-pic" />
+        <p class="alcohol-name">
+          {{ alcohol.name }}
+        </p>
       </button>
     </ng-container>
   </article>
-  <article *ngIf="selectedAlcohol && !showResult" class="amount-container">
+  <article
+    *ngIf="selectedAlcohol && !showEnterPercentage && !showResult"
+    class="amount-container"
+  >
     <form>
       <div class="form-group">
         <label for="amount">Какво количество изпи? (мл)</label>
@@ -55,14 +83,39 @@
             type="button"
             [disabled]="!selectedAmount"
             class="btn btn-primary"
-            (click)="showResult = true"
+            (click)="selectAmount()"
           >
             <i class="fa-solid fa-arrow-right"></i>
           </button>
         </div>
-        <small id="amountHelp" class="form-text text-muted"
-          >И недей да лъжеш!</small
+      </div>
+    </form>
+  </article>
+  <article *ngIf="showEnterPercentage" class="amount-container">
+    <form>
+      <div class="form-group">
+        <label for="alcohol-percentage"
+          >Колко процента алкохол беше напитката?</label
         >
+        <div class="input-and-button">
+          <input
+            [(ngModel)]="otherAlcPer"
+            type="number"
+            class="form-control"
+            name="alcohol-percentage"
+            id="alcohol-percentage"
+            aria-describedby="alcoholPercentage"
+            placeholder="40%"
+          />
+          <button
+            type="button"
+            [disabled]="!otherAlcPer"
+            class="btn btn-primary"
+            (click)="enterPercentage()"
+          >
+            <i class="fa-solid fa-arrow-right"></i>
+          </button>
+        </div>
       </div>
     </form>
   </article>
@@ -70,10 +123,24 @@
     *ngIf="selectedAlcohol && selectedAmount && showResult"
     class="result-container"
   >
-    <p class="result">Твоят резултат е: {{ result }} алкохолни единици.</p>
+    <p class="result">
+      Твоят резултат е: <span class="number">{{ result }}</span> алкохолни
+      единици.
+    </p>
     <button type="button" (click)="tryAgain()" class="btn btn-primary">
       Опитай пак
     </button>
+    <p class="text">
+      <span class="number">1</span> алкохолна единица се разгражда от човешкия
+      организъм средно за около <span class="number">1</span>
+      час.
+    </p>
+    <p class="text">
+      Световната здравна организация препоръчва жените да не превишават
+      <span class="number">2</span> – <span class="number">3</span> алкохолни
+      единици дневно, а мъжете – не повече от <span class="number">3</span> –
+      <span class="number">4</span>.
+    </p>
   </article>
 </main>
 <div

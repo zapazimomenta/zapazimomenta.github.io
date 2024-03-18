@@ -1,8 +1,10 @@
 import { Component } from '@angular/core';
 
 interface Alcohol {
+  id: number;
   name: string;
   alcPer: number;
+  pic: string;
 }
 
 @Component({
@@ -19,16 +21,18 @@ export class AppComponent {
     'assets/pics/third.jpeg',
   ];
   alcohols: Array<Alcohol> = [
-    { name: 'бира', alcPer: 4 },
-    { name: 'водка', alcPer: 40 },
-    { name: 'уиски', alcPer: 40 },
-    { name: 'вино', alcPer: 12 },
-    { name: 'джин', alcPer: 40 },
-    { name: 'други', alcPer: 40 },
+    { id: 1, name: 'бира', alcPer: 4, pic: '../assets/pics/beer.png' },
+    { id: 2, name: 'водка', alcPer: 40, pic: '../assets/pics/vodka.png' },
+    { id: 3, name: 'уиски', alcPer: 40, pic: '../assets/pics/whiskey.png' },
+    { id: 4, name: 'вино', alcPer: 12, pic: '../assets/pics/wine.png' },
+    { id: 5, name: 'джин', alcPer: 40, pic: '../assets/pics/gin.png' },
+    { id: 6, name: 'други', alcPer: 40, pic: '../assets/pics/other.png' },
   ];
   selectedAlcohol: Alcohol | null;
   selectedAmount: number | null;
   showResult: boolean = false;
+  otherAlcPer: number | null;
+  showEnterPercentage: boolean = false;
 
   ngOnInit() {
     setTimeout(() => (this.isLoading = false), 1000);
@@ -47,5 +51,20 @@ export class AppComponent {
     this.selectedAlcohol = null;
     this.selectedAmount = null;
     this.showResult = false;
+    this.otherAlcPer = null;
+  }
+
+  selectAmount() {
+    if (this.selectedAlcohol && this.selectedAlcohol.id === 6) {
+      this.showEnterPercentage = true;
+    } else {
+      this.showResult = true;
+    }
+  }
+
+  enterPercentage() {
+    (this.selectedAlcohol as Alcohol).alcPer = this.otherAlcPer as number;
+    this.showEnterPercentage = false;
+    this.showResult = true;
   }
 }
