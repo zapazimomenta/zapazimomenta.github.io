@@ -1,17 +1,3 @@
-@font-face {
-  font-family: "Baron";
-  src: url("assets/fonts/baron/BaronNeue-Regular.otf");
-  font-weight: 500;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "Garbata";
-  src: url("assets/fonts/garbata/GarbataTrial-Regular.ttf");
-  font-weight: 500;
-  font-style: normal;
-}
-
 *,
 *:before,
 *:after {
@@ -256,4 +242,10 @@ dl:last-child,
 table:last-child,
 blockquote:last-child {
   margin-bottom: 0;
+}
+
+.modal-open {
+  /* Keeps scroll even when modal open */
+  padding: 0 !important;
+  overflow-y: auto !important;
 }

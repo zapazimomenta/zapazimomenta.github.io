@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, TemplateRef } from '@angular/core';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 interface Alcohol {
   id: number;
@@ -16,10 +17,13 @@ export class AppComponent {
   isLoading: boolean = true;
   displayNone: boolean = false;
   images = [
-    'assets/pics/first.jpeg',
-    'assets/pics/second.jpeg',
-    'assets/pics/third.jpeg',
+    'assets/pics/key.vision.new.5.png',
+    'assets/pics/key.vision.new.2.png',
+    'assets/pics/key.vision.new.3.png',
+    'assets/pics/key.vision.new.4.png',
+    'assets/pics/key.vision.new.1.png',
   ];
+  selectedImage: number = 0;
   alcohols: Array<Alcohol> = [
     { id: 1, name: 'бира', alcPer: 4, pic: '../assets/pics/beer.png' },
     { id: 2, name: 'водка', alcPer: 40, pic: '../assets/pics/vodka.png' },
@@ -33,6 +37,8 @@ export class AppComponent {
   showResult: boolean = false;
   otherAlcPer: number | null;
   showEnterPercentage: boolean = false;
+
+  constructor(private modalService: NgbModal) {}
 
   ngOnInit() {
     setTimeout(() => (this.isLoading = false), 1000);
@@ -66,5 +72,13 @@ export class AppComponent {
     (this.selectedAlcohol as Alcohol).alcPer = this.otherAlcPer as number;
     this.showEnterPercentage = false;
     this.showResult = true;
+  }
+
+  openModal(photoModal: TemplateRef<any>, photoIndex: number) {
+    this.selectedImage = photoIndex;
+    this.modalService.open(photoModal, {
+      centered: true,
+      size: 'xl',
+    });
   }
 }
