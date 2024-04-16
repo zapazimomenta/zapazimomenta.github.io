@@ -210,6 +210,7 @@ ngb-carousel {
   font-weight: 500;
   font-size: 19px;
   color: #044996;
+  text-align: center;
 }
 
 .input-and-button {
@@ -275,6 +276,54 @@ ngb-carousel {
 }
 
 @media screen and (max-width: 500px) {
+  main {
+    gap: 2rem;
+  }
+
+  h1.title {
+    font-size: 30px;
+  }
+
+  h2.title {
+    font-size: 22px;
+  }
+
+  .after-carousel p {
+    font-size: 18px;
+  }
+
+  .consumed-container-title {
+    font-size: 18px;
+  }
+
+  .consumed-container-text {
+    font-size: 14px;
+  }
+
+  .alcohol-name {
+    font-size: 18px;
+  }
+
+  .amount-container {
+    align-items: flex-start;
+  }
+
+  .amount-container label {
+    font-size: 18px;
+  }
+
+  .result-container p {
+    font-size: 18px;
+  }
+
+  .result-container button {
+    font-size: 18px;
+  }
+
+  .result-container p.text {
+    font-size: 14px;
+  }
+
   .button-container {
     grid-template-rows: repeat(3, 1fr);
     grid-template-columns: repeat(2, 1fr);

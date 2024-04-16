@@ -12,7 +12,7 @@
     </div>
     <img src="../assets/pics/logo.png" alt="logo" class="logo" />
   </div>
-  <ngb-carousel>
+  <ngb-carousel [pauseOnHover]="false" [pauseOnFocus]="false">
     <ng-template ngbSlide *ngFor="let image of images; let i = index">
       <div class="picsum-img-wrapper">
         <button
